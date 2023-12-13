@@ -1,0 +1,847 @@
+{
+  "stats": {
+    "suites": 20,
+    "tests": 20,
+    "passes": 19,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-12-13T03:10:13.657Z",
+    "end": "2023-12-13T03:12:29.363Z",
+    "duration": 135706,
+    "testsRegistered": 20,
+    "passPercent": 95,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d248c645-f55c-4b20-b843-19073ed20710",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cee73fb1-7b42-45bb-9ffb-2f2d7cdf0b31",
+          "title": "Pagos Calendarios A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-10A.spec.js",
+          "file": "\\tests\\HU-10A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse un calendario interactivo que permita moverse entre los meses y los años y que presente los datos de la inversión en las fechas correspondientes.",
+              "fullTitle": "Pagos Calendarios A Debe generarse un calendario interactivo que permita moverse entre los meses y los años y que presente los datos de la inversión en las fechas correspondientes.",
+              "timedOut": false,
+              "duration": 8816,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//---------------------------------------------------------------    \nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id('montoI')).sendKeys(\"5000\");\nawait driver.findElement(By.id(\"fechaI\")).sendKeys(\"13/12/2023\");\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2027\");\nawait driver.findElement(By.id('btnInversion')).click() \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Pagos Caleandarios A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Pagos Calendarios A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "b4e9c6f7-28c5-4fb3-8fc1-24f1e05c96df",
+              "parentUUID": "cee73fb1-7b42-45bb-9ffb-2f2d7cdf0b31",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4e9c6f7-28c5-4fb3-8fc1-24f1e05c96df"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8816,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "b1fbd378-203c-41ba-8d7b-d1771632d642",
+          "title": "Pagos Calendarios B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-10B.spec.js",
+          "file": "\\tests\\HU-10B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse un calendario interactivo que permita moverse entre los meses y los años y que presente los datos del préstamo en las fechas correspondientes.",
+              "fullTitle": "Pagos Calendarios B Debe generarse un calendario interactivo que permita moverse entre los meses y los años y que presente los datos del préstamo en las fechas correspondientes.",
+              "timedOut": false,
+              "duration": 2470,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//---------------------------------------------------------------    \nawait driver.findElement(By.id('prestamo')).click();\nawait driver.findElement(By.id('Monto_Prestamo')).sendKeys(5000);\nawait driver.findElement(By.id('4')).click();\nawait driver.findElement(By.id('btnPrestamo')).click()       \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Pagos Caleandarios B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Pagos Calendarios B.png');\nawait driver.quit();",
+              "err": {
+                "message": "WebDriverError: no such execution context\n  (Session info: chrome=120.0.6099.71)",
+                "estack": "WebDriverError: no such execution context\n  (Session info: chrome=120.0.6099.71)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Context.<anonymous> (tests\\HU-10B.spec.js:9:9)",
+                "diff": null
+              },
+              "uuid": "8c953285-25e4-4d9e-909a-f19e1fae510b",
+              "parentUUID": "b1fbd378-203c-41ba-8d7b-d1771632d642",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8c953285-25e4-4d9e-909a-f19e1fae510b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2470,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "78d130c1-70ae-47ea-9dd1-55a827abc3fc",
+          "title": "Diseño de Interfaz de Usuario Atractiva A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-11A.spec.js",
+          "file": "\\tests\\HU-11A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe visualizarse de forma correcta la pagina principal.",
+              "fullTitle": "Diseño de Interfaz de Usuario Atractiva A Debe visualizarse de forma correcta la pagina principal.",
+              "timedOut": false,
+              "duration": 5372,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Diseño de Interfaz de Usuario Atractiva A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Diseño de Interfaz de Usuario Atractiva A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "0c38c535-f163-4127-a3db-9e75c69e835f",
+              "parentUUID": "78d130c1-70ae-47ea-9dd1-55a827abc3fc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c38c535-f163-4127-a3db-9e75c69e835f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5372,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "2d043065-9116-49ca-b832-b70a04173a38",
+          "title": "Diseño de Interfaz de Usuario Atractiva B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-11B.spec.js",
+          "file": "\\tests\\HU-11B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe visualizarse de forma correcta la pagina de inicio de sesión.",
+              "fullTitle": "Diseño de Interfaz de Usuario Atractiva B Debe visualizarse de forma correcta la pagina de inicio de sesión.",
+              "timedOut": false,
+              "duration": 5505,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('login')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Diseño de Interfaz de Usuario Atractiva B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Diseño de Interfaz de Usuario Atractiva B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "2a7eba3c-4b22-40c1-8d08-6c046c3363e3",
+              "parentUUID": "2d043065-9116-49ca-b832-b70a04173a38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2a7eba3c-4b22-40c1-8d08-6c046c3363e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5505,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "6a2764fc-b353-4515-ab17-51314283c7be",
+          "title": "Experiencia del Usuario (UX) A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-12A.spec.js",
+          "file": "\\tests\\HU-12A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Se debe experimentar un fluidez y comodidad al navegar en en el sistema entre páginas.",
+              "fullTitle": "Experiencia del Usuario (UX) A Se debe experimentar un fluidez y comodidad al navegar en en el sistema entre páginas.",
+              "timedOut": false,
+              "duration": 10521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('registrar')).click();\nawait driver.findElement(By.id('cedula')).sendKeys(\"400-3456927-0\");\nawait driver.findElement(By.id('nombre')).sendKeys(\"Peter Jose\");\nawait driver.findElement(By.id('apellido')).sendKeys(\"Languila Suarez\");\nawait driver.findElement(By.id('contraseña')).sendKeys(\"1234\");\nawait driver.findElement(By.id('direccion')).sendKeys(\"Av. 1 Esquina. 2 Apart. 3\");\nawait driver.findElement(By.id('telefono')).sendKeys(\"829-333-4444\");\nawait driver.findElement(By.id('tipoUsuario')).sendKeys(\"Prestatario\");\nawait driver.findElement(By.className('botons')).click();\nawait driver.findElement(By.id('inversion')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Experiencia del Usuario (UX) A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Experiencia del Usuario (UX) A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "0baac910-1b2c-478d-96e9-20dd98adc499",
+              "parentUUID": "6a2764fc-b353-4515-ab17-51314283c7be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0baac910-1b2c-478d-96e9-20dd98adc499"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10521,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "af68bda9-5583-407f-8bd4-10e45c5fe99f",
+          "title": "Experiencia del Usuario (UX) b",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-12B.spec.js",
+          "file": "\\tests\\HU-12B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Se debe experimentar un fluidez y comodidad al navegar en en el sistema entre páginas.",
+              "fullTitle": "Experiencia del Usuario (UX) b Se debe experimentar un fluidez y comodidad al navegar en en el sistema entre páginas.",
+              "timedOut": false,
+              "duration": 7974,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('registrar')).click();\nawait driver.findElement(By.id('cedula')).sendKeys(\"400-3456927-0\");\nawait driver.findElement(By.id('nombre')).sendKeys(\"Peter Jose\");\nawait driver.findElement(By.id('apellido')).sendKeys(\"Languila Suarez\");\nawait driver.findElement(By.id('contraseña')).sendKeys(\"1234\");\nawait driver.findElement(By.id('direccion')).sendKeys(\"Av. 1 Esquina. 2 Apart. 3\");\nawait driver.findElement(By.id('telefono')).sendKeys(\"829-333-4444\");\nawait driver.findElement(By.id('tipoUsuario')).sendKeys(\"Prestatario\");\nawait driver.findElement(By.className('botons')).click();\nawait driver.findElement(By.id('prestamo')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Experiencia del Usuario (UX) B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Experiencia del Usuario (UX) B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "dfa2a0fb-62de-4af5-8ca4-d0d1bb7169ca",
+              "parentUUID": "af68bda9-5583-407f-8bd4-10e45c5fe99f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dfa2a0fb-62de-4af5-8ca4-d0d1bb7169ca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7974,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "87edf2f4-4428-4558-8979-9f6ab04be113",
+          "title": "Registro Usuario A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-1A.spec.js",
+          "file": "\\tests\\HU-1A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Ser redirigido a la página de opciones de servicios.",
+              "fullTitle": "Registro Usuario A Ser redirigido a la página de opciones de servicios.",
+              "timedOut": false,
+              "duration": 6644,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('registrar')).click();\nawait driver.findElement(By.id('cedula')).sendKeys(\"400-3456927-0\");\nawait driver.findElement(By.id('nombre')).sendKeys(\"Peter Jose\");\nawait driver.findElement(By.id('apellido')).sendKeys(\"Languila Suarez\");\nawait driver.findElement(By.id('contraseña')).sendKeys(\"1234\");\nawait driver.findElement(By.id('direccion')).sendKeys(\"Av. 1 Esquina. 2 Apart. 3\");\nawait driver.findElement(By.id('telefono')).sendKeys(\"829-333-4444\");\nawait driver.findElement(By.id('tipoUsuario')).sendKeys(\"Prestatario\");\nawait driver.findElement(By.className('botons')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Registro Usuario A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Registro Usuario A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "2e0a726d-6152-40b4-8f21-6baef3a0a210",
+              "parentUUID": "87edf2f4-4428-4558-8979-9f6ab04be113",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2e0a726d-6152-40b4-8f21-6baef3a0a210"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6644,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "6e659996-4892-4f0e-8df5-c8d7e670e93e",
+          "title": "Registro Usuario B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-1B.spec.js",
+          "file": "\\tests\\HU-1B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deben presentarse un mensajes de error y denegar el registro.",
+              "fullTitle": "Registro Usuario B Deben presentarse un mensajes de error y denegar el registro.",
+              "timedOut": false,
+              "duration": 5431,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('registrar')).click();\nawait driver.findElement(By.className('botons')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Registro Usuario B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Registro Usuario B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "9fe22380-6419-403a-ba6f-9a056783bfd6",
+              "parentUUID": "6e659996-4892-4f0e-8df5-c8d7e670e93e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9fe22380-6419-403a-ba6f-9a056783bfd6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5431,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "18cf0b74-35cf-4cf1-83ad-64b0df485d0f",
+          "title": "Inicio de Sesión A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-2A.spec.js",
+          "file": "\\tests\\HU-2A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Ser redirigido a la página de opciones de servicios.",
+              "fullTitle": "Inicio de Sesión A Ser redirigido a la página de opciones de servicios.",
+              "timedOut": false,
+              "duration": 5721,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Inicio de Sesión A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Inicio de Sesión A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "ddaf0a0a-fd29-45fa-a0e8-6e3a6531887f",
+              "parentUUID": "18cf0b74-35cf-4cf1-83ad-64b0df485d0f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ddaf0a0a-fd29-45fa-a0e8-6e3a6531887f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5721,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "02340ab1-38cd-4f7c-ab91-445a6d8a5100",
+          "title": "Inicio de Sesión B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-2B.spec.js",
+          "file": "\\tests\\HU-2B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe presentarse un mensaje de error de campos vacios y permanecer en la pagina de inicio de sesión.",
+              "fullTitle": "Inicio de Sesión B Debe presentarse un mensaje de error de campos vacios y permanecer en la pagina de inicio de sesión.",
+              "timedOut": false,
+              "duration": 5812,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('entrar')).click();\n\nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Inicio de Sesión B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Inicio de Sesión B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "48c88d69-144a-4e46-ac1d-54be19f54473",
+              "parentUUID": "02340ab1-38cd-4f7c-ab91-445a6d8a5100",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "48c88d69-144a-4e46-ac1d-54be19f54473"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5812,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "daef82a1-4e8f-43b8-96f3-28c78973f7f9",
+          "title": "Solicitar Préstamo A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-3A.spec.js",
+          "file": "\\tests\\HU-3A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse un calendario con la cuotas de pago, cantidad a pagar por cuota y la cantidad de cuotas que han sido pagadas.",
+              "fullTitle": "Solicitar Préstamo A Debe generarse un calendario con la cuotas de pago, cantidad a pagar por cuota y la cantidad de cuotas que han sido pagadas.",
+              "timedOut": false,
+              "duration": 7605,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//Solicitar Prestamo\nawait driver.findElement(By.id('prestamo')).click();\nawait driver.findElement(By.id('Monto_Prestamo')).sendKeys(12000);\nawait driver.findElement(By.id('12')).click();\nawait driver.findElement(By.id('btnPrestamo')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Solicitar Préstamo A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Solicitar Préstamo A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "891f6840-b3ba-4f85-9f45-d3519d6505f6",
+              "parentUUID": "daef82a1-4e8f-43b8-96f3-28c78973f7f9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "891f6840-b3ba-4f85-9f45-d3519d6505f6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7605,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "ff1fe425-76d0-460e-ad99-e966526e30eb",
+          "title": "Solicitar Préstamo b",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-3B.spec.js",
+          "file": "\\tests\\HU-3B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse un calendario con la cuotas de pago, cantidad a pagar por cuota y la cantidad de cuotas que han sido pagadas.",
+              "fullTitle": "Solicitar Préstamo b Debe generarse un calendario con la cuotas de pago, cantidad a pagar por cuota y la cantidad de cuotas que han sido pagadas.",
+              "timedOut": false,
+              "duration": 8017,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//Solicitar Prestamo\nawait driver.findElement(By.id('prestamo')).click();\nawait driver.findElement(By.id('Monto_Prestamo')).sendKeys(5000);\nawait driver.findElement(By.id('4')).click();\nawait driver.findElement(By.id('btnPrestamo')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Solicitar Préstamo B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Solicitar Préstamo B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "59474255-8a70-4c55-9d10-518200a909c6",
+              "parentUUID": "ff1fe425-76d0-460e-ad99-e966526e30eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59474255-8a70-4c55-9d10-518200a909c6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8017,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "e738bf18-f315-4a4c-9885-91846ba87623",
+          "title": "Calcular Préstamo A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-4A.spec.js",
+          "file": "\\tests\\HU-4A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse un calendario con la cuotas de pago, la cantidad a pagar debe ser 1,000 y en un total de 12 cuotas, un pago al mes por un año.",
+              "fullTitle": "Calcular Préstamo A Debe generarse un calendario con la cuotas de pago, la cantidad a pagar debe ser 1,000 y en un total de 12 cuotas, un pago al mes por un año.",
+              "timedOut": false,
+              "duration": 6790,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//Solicitar Prestamo\nawait driver.findElement(By.id('prestamo')).click();\nawait driver.findElement(By.id('Monto_Prestamo')).sendKeys(10000);\nawait driver.findElement(By.id('12')).click();\nawait driver.findElement(By.id('btnPrestamo')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Calcular Préstamo A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Calcular Préstamo A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "f624694f-9e92-4494-8368-b4da575c0ef2",
+              "parentUUID": "e738bf18-f315-4a4c-9885-91846ba87623",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f624694f-9e92-4494-8368-b4da575c0ef2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6790,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "5fc119de-338f-4fb6-bdcd-712b71e46157",
+          "title": "Calcular Préstamo B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-4B.spec.js",
+          "file": "\\tests\\HU-4B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "El programa no debe realizar ningun calculo y mostrar un mensaje de error que los campos deben ser llenados.",
+              "fullTitle": "Calcular Préstamo B El programa no debe realizar ningun calculo y mostrar un mensaje de error que los campos deben ser llenados.",
+              "timedOut": false,
+              "duration": 6606,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//---------------------------------------------------\nawait driver.findElement(By.id('prestamo')).click();\nawait driver.findElement(By.id('btnPrestamo')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Calcular Préstamo B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Calcular Préstamo B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "58597974-7eaf-47e9-8619-b5833ef35aa1",
+              "parentUUID": "5fc119de-338f-4fb6-bdcd-712b71e46157",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58597974-7eaf-47e9-8619-b5833ef35aa1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6606,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "122f34a0-e500-4ee6-91c8-fd21cb419342",
+          "title": "Solicitar Inversión A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-5A.spec.js",
+          "file": "\\tests\\HU-5A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe mostrarse un calendario con la fecha de inicio de la inversión y la inversion inicial 12,000 y la fecha de termino con el retorno de la inversión 12,050.",
+              "fullTitle": "Solicitar Inversión A Debe mostrarse un calendario con la fecha de inicio de la inversión y la inversion inicial 12,000 y la fecha de termino con el retorno de la inversión 12,050.",
+              "timedOut": false,
+              "duration": 6985,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//linea para maximizar la pantalla\n//await driver.manage().window().maximize();\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//---------------------------------------------------\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id('montoI')).sendKeys(\"12000\");\nawait driver.findElement(By.id(\"fechaI\")).sendKeys(\"13/12/2023\");\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2024\");\nawait driver.findElement(By.id('btnInversion')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Solicitar Inversión A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Solicitar Inversión A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "17834f4d-de42-48e1-b552-a5bc7e234399",
+              "parentUUID": "122f34a0-e500-4ee6-91c8-fd21cb419342",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "17834f4d-de42-48e1-b552-a5bc7e234399"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6985,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "03b402bd-78d9-4088-a1fb-90f693774002",
+          "title": "Solicitar Inversión B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-5B.spec.js",
+          "file": "\\tests\\HU-5B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "El programa no debe realizar ningun calculo y mostrar un mensaje de error que los campos deben ser llenados.",
+              "fullTitle": "Solicitar Inversión B El programa no debe realizar ningun calculo y mostrar un mensaje de error que los campos deben ser llenados.",
+              "timedOut": false,
+              "duration": 6728,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Iniciar Sesión\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\n//---------------------------------------------------\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id('btnInversion')).click()        \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Solicitar Inversión B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Solicitar Inversión B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "c11422a0-4626-492e-8e74-0b356edf3528",
+              "parentUUID": "03b402bd-78d9-4088-a1fb-90f693774002",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c11422a0-4626-492e-8e74-0b356edf3528"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6728,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "2d328e03-385a-4492-ab3e-cd746be3c0c7",
+          "title": "Duración de la Inversión A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-7A.spec.js",
+          "file": "\\tests\\HU-7A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe mostrar claramente en el calendario el retorno esperado en base al monto y la tasa de interés seleccionada.",
+              "fullTitle": "Duración de la Inversión A Debe mostrar claramente en el calendario el retorno esperado en base al monto y la tasa de interés seleccionada.",
+              "timedOut": false,
+              "duration": 7043,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id('montoI')).sendKeys(\"12000\");\n//---------------------------------------------------\nawait driver.findElement(By.id(\"fechaI\")).sendKeys(\"13/12/2023\");\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2027\");\nawait driver.findElement(By.id('btnInversion')).click() \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Duración de la Inversión A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Duración de la Inversión A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "05af876b-828e-4bd5-97d9-4205a8c44724",
+              "parentUUID": "2d328e03-385a-4492-ab3e-cd746be3c0c7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "05af876b-828e-4bd5-97d9-4205a8c44724"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7043,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "4133eb7f-a82e-4a8a-8cd9-607e5879a433",
+          "title": "Duración de la Inversión B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-7B.spec.js",
+          "file": "\\tests\\HU-7B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "No debe de realizarse ningún calculo y debe presentarse un mensaje de error para que todos los campos sean llenados correctamente.",
+              "fullTitle": "Duración de la Inversión B No debe de realizarse ningún calculo y debe presentarse un mensaje de error para que todos los campos sean llenados correctamente.",
+              "timedOut": false,
+              "duration": 6891,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id('montoI')).sendKeys(\"12000\");\n//---------------------------------------------------\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2027\");\nawait driver.findElement(By.id('btnInversion')).click() \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Duración de la Inversión B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Duración de la Inversión B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "82207edf-98aa-4165-8c23-d6cf314333a0",
+              "parentUUID": "4133eb7f-a82e-4a8a-8cd9-607e5879a433",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82207edf-98aa-4165-8c23-d6cf314333a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6891,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "4b24fd5c-ed40-454a-85d2-05cafd325086",
+          "title": "Monto de la Inversión A",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-8A.spec.js",
+          "file": "\\tests\\HU-8A.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debe generarse el calendario de pagos con el ROI calculado en base al monto ingresado.",
+              "fullTitle": "Monto de la Inversión A Debe generarse el calendario de pagos con el ROI calculado en base al monto ingresado.",
+              "timedOut": false,
+              "duration": 7034,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id(\"fechaI\")).sendKeys(\"13/12/2023\");\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2027\");\n//---------------------------------------------------\nawait driver.findElement(By.id('montoI')).sendKeys(\"12000\");\nawait driver.findElement(By.id('btnInversion')).click() \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Monto de la Inversión A.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Monto de la Inversión A.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "442a7b25-644a-4f47-b113-444ccb206df0",
+              "parentUUID": "4b24fd5c-ed40-454a-85d2-05cafd325086",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "442a7b25-644a-4f47-b113-444ccb206df0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7034,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "041f2189-1289-4261-8c42-4c30bc888758",
+          "title": "Monto de la Inversión B",
+          "fullFile": "F:\\Archivos roylin\\Pruebas Sistema de Ahorros y Préstamos\\tests\\HU-8B.spec.js",
+          "file": "\\tests\\HU-8B.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "No debe de realizarse ningún calculo y debe presentarse un mensaje de error para que todos los campos sean llenados correctamente.",
+              "fullTitle": "Monto de la Inversión B No debe de realizarse ningún calculo y debe presentarse un mensaje de error para que todos los campos sean llenados correctamente.",
+              "timedOut": false,
+              "duration": 7622,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\nawait driver.get('https://localhost:44310/Home/Inicio')\n//Estado Inicial\nawait driver.findElement(By.id('login')).click();\nawait driver.findElement(By.id('usuario')).sendKeys(\"LuisSoto\");\nawait driver.findElement(By.id('password')).sendKeys(\"1234\");\nawait driver.findElement(By.id('entrar')).click();\nawait driver.findElement(By.id('inversion')).click();\nawait driver.findElement(By.id(\"fechaI\")).sendKeys(\"13/12/2023\");\nawait driver.findElement(By.id(\"fechaT\")).sendKeys(\"13/12/2027\");\n//---------------------------------------------------\nawait driver.findElement(By.id('btnInversion')).click() \nconst screenshot = await driver.takeScreenshot();\nfs.writeFileSync('./screenshots/Monto de la Inversión B.png', screenshot, 'base64');\nconsole.log('Captura de pantalla tomada y guardada como Monto de la Inversión B.png');\nawait driver.quit();",
+              "err": {},
+              "uuid": "b767a516-50e5-4d6c-8991-5392ff3c1955",
+              "parentUUID": "041f2189-1289-4261-8c42-4c30bc888758",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b767a516-50e5-4d6c-8991-5392ff3c1955"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7622,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDor": "F:/Archivos"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
